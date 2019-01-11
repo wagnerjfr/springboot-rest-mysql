@@ -92,9 +92,9 @@ The following output log messages indicates that the call was successful:
 
 ![alt text](https://github.com/wagnerjfr/springboot-rest-mysql/blob/master/figures/figure2.png)
 
-Try the same in the others sections: GET, PUT and DELETE.
+Try the other sections: GET, PUT and DELETE.
 
-## 4. Run the REST application in a container
+## 4. Run the REST API application in a container
 Let's now deploy our SpingBoot application and an Docker image and run it as a container.
 
 First, run the command below which will create the application image:
