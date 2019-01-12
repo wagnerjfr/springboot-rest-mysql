@@ -30,6 +30,7 @@ Now we can start the MySQL 8 container:
 ```
 docker run -d -p 3306:3306 --name=docker-mysql \
   --network=spring-rest-network \
+  --env="MYSQL_USER=spring-user" \
   --env="MYSQL_ROOT_PASSWORD=root" \
   --env="MYSQL_PASSWORD=secret" \
   --env="MYSQL_DATABASE=test" \
@@ -49,10 +50,8 @@ MySQL is ready to use when the below output log is printed:
 
 Try accessing MySQL container with the below command:
 ```
-docker exec -it docker-mysql mysql -uroot -p
+docker exec -it docker-mysql mysql -uspring-user -psecret
 ```
-When asked for the  the password, type **secret** and then press ENTER.
-
 You will be connected to MySQL. Type *bye* to exit.
 
 ## 3. Launch the application and interact with it
@@ -64,7 +63,7 @@ A successful output log will be:
 ```console
 2019-01-11 14:08:19.985  INFO 4064 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2019-01-11 14:08:19.989  INFO 4064 --- [           main] c.m.s.SpringRestMysqlApplication         : Started SpringRestMysqlApplication in 8.592 seconds (JVM running for 20.038)
-2019-01-11 14:08:20.125  INFO 4064 --- [           main] c.m.s.load.LoadUserDatabase              : Preloading User(id=1, name=Wagner Jose Franchin, email=wagner@teste.com)
+2019-01-11 14:08:20.125  INFO 4064 --- [           main] c.m.s.load.LoadUserDatabase              : Preloading User(id=1, name=Wagner Jose Franchin, email=wagner@test.com)
 ```
 ### 3.1 Curl
 First, lets test it using curl to get all users:
@@ -100,6 +99,20 @@ Let's now deploy our SpingBoot application and an Docker image and run it as a c
 First, run the command below which will create the application image:
 ```
 mvn clean package docker:build -DskipTests
+```
+The successful outpu of the process should be:
+```
+Successfully built 39af6a93108a
+Successfully tagged docker.mycompany.com/spring-rest-mysql:latest
+[INFO] Built docker.mycompany.com/spring-rest-mysql
+[INFO] Tagging docker.mycompany.com/spring-rest-mysql with 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 20.082 s
+[INFO] Finished at: 2019-01-12T10:11:06-02:00
+[INFO] Final Memory: 61M/396M
+[INFO] ------------------------------------------------------------------------
 ```
 Finally, run the container:
 ```
