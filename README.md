@@ -16,7 +16,7 @@ git clone https://github.com/wagnerjfr/sprinboot-rest-mysql.git
 ```
 Go inside project folder and build the project running:
 ```
-cd sprinboot-rest-mysql.git
+cd sprinboot-rest-mysql
 mvn clean package -DskipTests
 ```
 ## 2. Start MySQL locally in a Docker container
