@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-LABEL maintainer="wagnerjfr@yahoo.com.br"
+LABEL maintainer="Wagner Franchin"
 
 RUN apk update && apk add ca-certificates wget && update-ca-certificates
 
