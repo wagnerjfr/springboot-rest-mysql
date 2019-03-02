@@ -100,7 +100,7 @@ First, run the command below which will create the application image:
 ```
 mvn clean package docker:build -DskipTests
 ```
-The successful outpu of the process should be:
+The successful output of the process should be:
 ```
 Successfully built 39af6a93108a
 Successfully tagged docker.mycompany.com/spring-rest-mysql:latest
