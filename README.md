@@ -52,7 +52,7 @@ Try accessing MySQL container with the below command:
 ```
 docker exec -it docker-mysql mysql -uspring-user -psecret
 ```
-You will be connected to MySQL. Type *bye* to exit.
+You will be connected to MySQL. Type `exit` to exit.
 
 ## 3. Launch the application and interact with it
 From the project root folder, run the command below to launch the application:
