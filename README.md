@@ -12,19 +12,19 @@ The following sections details each step to get the project up and running.
 ## 1. Clone the project and build it
 Run the command below in your terminal to clone the project:
 ```
-git clone https://github.com/wagnerjfr/sprinboot-rest-mysql.git
+$ git clone https://github.com/wagnerjfr/sprinboot-rest-mysql.git
 ```
 Go inside project folder and build the project running:
 ```
 cd sprinboot-rest-mysql
-mvn clean package -DskipTests
+$ mvn clean package -DskipTests
 ```
 ## 2. Start MySQL locally in a Docker container
 
 Let's first create a Docker network. It will be useful in section 4. 
 
 ```
-docker network create spring-rest-network
+$ docker network create spring-rest-network
 ```
 Now we can start the MySQL 8 container:
 ```
@@ -40,7 +40,7 @@ It will take some seconds.
 
 Run the command below to folow its initialization:
 ```
-docker logs docker-mysql
+$ docker logs docker-mysql
 ```
 MySQL is ready to use when the below output log is printed:
 ```
@@ -50,14 +50,14 @@ MySQL is ready to use when the below output log is printed:
 
 Try accessing MySQL container with the below command:
 ```
-docker exec -it docker-mysql mysql -uspring-user -psecret
+$ docker exec -it docker-mysql mysql -uspring-user -psecret
 ```
 You will be connected to MySQL. Type `exit` to exit.
 
 ## 3. Launch the application and interact with it
 From the project root folder, run the command below to launch the application:
 ```
-mvn clean spring-boot:run
+$ mvn clean spring-boot:run
 ```
 A successful output log will be:
 ```console
@@ -68,7 +68,7 @@ A successful output log will be:
 ### 3.1 Curl
 First, lets test it using curl to get all users:
 ```
-curl -X GET "http://localhost:8080/api/users"
+$ curl -X GET "http://localhost:8080/api/users"
 ```
 The output log should be:
 ```console
@@ -98,7 +98,7 @@ Let's now deploy our SpingBoot application and an Docker image and run it as a c
 
 First, run the command below which will create the application image:
 ```
-mvn clean package docker:build -DskipTests
+$ mvn clean package docker:build -DskipTests
 ```
 The successful output of the process should be:
 ```
@@ -123,23 +123,23 @@ docker run -d -p 9000:8080 --name=user-rest-api \
 ```
 After some seconds, try to query the users using curl command on the container's port 9000: 
 ```
-curl -X GET "http://localhost:9000/api/users"
+$ curl -X GET "http://localhost:9000/api/users"
 ```
 
 ## Clean up
 Stop MySQL and REST API application containers:
 ```
-docker stop docker-mysql user-rest-api
+$ docker stop docker-mysql user-rest-api
 ```
 Remove stopped containers:
 ```
-docker rm docker-mysql user-rest-api
+$ docker rm docker-mysql user-rest-api
 ```
 Delete created Docker images:
 ```
-docker rmi docker.mycompany.com/spring-rest-mysql:0.0.1-SNAPSHOT docker.mycompany.com/spring-rest-mysql:latest
+$ docker rmi docker.mycompany.com/spring-rest-mysql:0.0.1-SNAPSHOT docker.mycompany.com/spring-rest-mysql:latest
 ```
 Delete Docker network:
 ```
-docker network rm spring-rest-network
+$ docker network rm spring-rest-network
 ```
