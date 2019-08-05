@@ -14,15 +14,17 @@ Run the command below in your terminal to clone the project:
 ```
 $ git clone https://github.com/wagnerjfr/sprinboot-rest-mysql.git
 ```
-Go inside project folder and build the project running:
+Go inside project folder:
 ```
-cd sprinboot-rest-mysql
+$ cd sprinboot-rest-mysql
+```
+Build the project:
+```
 $ mvn clean package -DskipTests
 ```
 ## 2. Start MySQL locally in a Docker container
 
 Let's first create a Docker network. It will be useful in section 4. 
-
 ```
 $ docker network create spring-rest-network
 ```
