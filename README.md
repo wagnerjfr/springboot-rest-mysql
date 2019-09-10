@@ -45,7 +45,7 @@ Run the command below to folow its initialization:
 $ docker logs docker-mysql
 ```
 MySQL is ready to use when the below output log is printed:
-```
+```console
 2019-01-11T15:58:14.022693Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.13'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
 2019-01-11T15:58:14.101713Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
 ```
@@ -103,7 +103,7 @@ First, run the command below which will create the application image:
 $ mvn clean package docker:build -DskipTests
 ```
 The successful output of the process should be:
-```
+```console
 Successfully built 39af6a93108a
 Successfully tagged docker.mycompany.com/spring-rest-mysql:latest
 [INFO] Built docker.mycompany.com/spring-rest-mysql
