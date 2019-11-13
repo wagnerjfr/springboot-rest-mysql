@@ -40,7 +40,7 @@ docker run -d -p 3306:3306 --name=docker-mysql \
 ```
 It will take some seconds.
 
-Run the command below to folow its initialization:
+Run the command below to follow its initialization:
 ```
 $ docker logs docker-mysql
 ```
