@@ -96,7 +96,7 @@ The following output log messages indicates that the call was successful:
 Try the other sections: GET, PUT and DELETE.
 
 ## 4. Run the REST API application in a container
-Let's now deploy our SpingBoot application and an Docker image and run it as a container.
+Let's now deploy our SpingBoot application and a Docker image and run it as a container.
 
 First, run the command below which will create the application image:
 ```
