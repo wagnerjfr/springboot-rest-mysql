@@ -137,7 +137,7 @@ Remove stopped containers:
 ```
 $ docker rm docker-mysql user-rest-api
 ```
-Delete created Docker images:
+Delete the Docker images created:
 ```
 $ docker rmi docker.mycompany.com/spring-rest-mysql:0.0.1-SNAPSHOT docker.mycompany.com/spring-rest-mysql:latest
 ```
