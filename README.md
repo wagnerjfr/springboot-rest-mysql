@@ -128,7 +128,7 @@ After some seconds, try to query the users using curl command on the container's
 $ curl -X GET "http://localhost:9000/api/users"
 ```
 
-## Clean up
+## 5. Clean up
 Stop MySQL and REST API application containers:
 ```
 $ docker stop docker-mysql user-rest-api
