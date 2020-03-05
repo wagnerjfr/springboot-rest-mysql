@@ -5,7 +5,7 @@ This project was developed using SpringBoot [Spring Initializr](start.spring.io)
 2. JPA
 3. Lombok
 
-Reference: https://spring.io/guides/tutorials/bookmarks/
+*Reference:* https://spring.io/guides/tutorials/bookmarks/
 
 The following sections details each step to get the project up and running.
 
