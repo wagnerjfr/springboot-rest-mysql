@@ -38,7 +38,7 @@ docker run -d -p 3306:3306 --name=docker-mysql \
   --env="MYSQL_DATABASE=test" \
   mysql:8.0
 ```
-It will take some seconds.
+*It will take some seconds.*
 
 Run the command below to follow its initialization:
 ```
