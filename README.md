@@ -128,20 +128,20 @@ After some seconds, try to query the users using curl command on the container's
 $ curl -X GET "http://localhost:9000/api/users"
 ```
 
-## 5. Clean up
-Stop MySQL and REST API application containers:
+## 5. Cleannig up
+To stop MySQL and REST API application containers:
 ```
 $ docker stop docker-mysql user-rest-api
 ```
-Remove stopped containers:
+To remove stopped containers:
 ```
 $ docker rm docker-mysql user-rest-api
 ```
-Delete the Docker images created:
+To delete the Docker images created:
 ```
 $ docker rmi docker.mycompany.com/spring-rest-mysql:0.0.1-SNAPSHOT docker.mycompany.com/spring-rest-mysql:latest
 ```
-Delete Docker network:
+To delete Docker network:
 ```
 $ docker network rm spring-rest-network
 ```
