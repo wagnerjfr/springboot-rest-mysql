@@ -79,7 +79,7 @@ The output log should be:
 ### 3.2 Swagger
 We can use Swagger to easily interact with the REST API.
 
-Access using your internet browser the link at <http://localhost:8080/swagger-ui.html>.
+Access using your internet browser the link at <http://localhost:8080/swagger-ui/index.html>.
 
 We can use this UI to run POST, PUT, GET and DELETE calls.
 
