@@ -1,7 +1,7 @@
 spring:
   jpa:
-    hibernate.ddl-auto: update
+    hibernate.ddl-auto: ${DDL_AUTO:update}
   datasource:
     url: jdbc:mysql://${MYSQL_ADDR:localhost}:3306/test
-    username: spring-user
-    password: secret
+    username: ${MYSQL_USERNAME:spring-user}
+    password: ${MYSQL_PASSWORD:secret}

@@ -1,19 +1,19 @@
 package com.mycompany.springrestmysql.dto;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Data
 public class CreateUser {
 
-    @ApiModelProperty(example = "User Test")
+    @Schema(example = "User Test")
     @NotBlank
     private String name;
 
-    @ApiModelProperty(example = "user@test.com", position = 2)
+    @Schema(example = "user@test.com")
     @Email
     @NotBlank
     private String email;

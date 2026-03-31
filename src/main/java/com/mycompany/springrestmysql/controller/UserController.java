@@ -6,7 +6,7 @@ import com.mycompany.springrestmysql.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @PutMapping("/users/{id}")
-    public User updateUser(@RequestBody CreateUser createUser, @PathVariable Long id) {
+    public User updateUser(@Valid @RequestBody CreateUser createUser, @PathVariable Long id) {
         User user = userService.getUser(id);
         user.setName(createUser.getName());
         user.setEmail(createUser.getEmail());
